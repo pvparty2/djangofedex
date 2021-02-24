@@ -1,1 +1,3 @@
 This project is for my company. I am trying to create a web UI for FedEx shipments. This web UI will be used to automate the creation of shipping labels. The automation will use "Banner Page". This page is the first page of every package destined for shipment. This page contains information about the recipient of the shipment.
+
+For my use: Need to start Anaconda prompt, instead of Windows Command prompt.

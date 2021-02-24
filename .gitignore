@@ -5,3 +5,4 @@ example_config.py
 create_shipment - Copy.py
 create_shipment.py
 create_shipment_functions.py
+*.sqlite3
