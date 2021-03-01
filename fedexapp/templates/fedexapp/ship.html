@@ -5,6 +5,15 @@
     <title>Fedex Ship</title>
   </head>
   <body>
-    <h1><a href="{% url 'fedexapp:ship' %}">FedEx Ship</a></h1>
+    <div>
+      <h1><a href="{% url 'fedexapp:ship' %}">FedEx Ship</a></h1>
+    </div>
+    <div>
+      <form action="/shipped/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+      </form>
+    </div>
   </body>
 </html>
