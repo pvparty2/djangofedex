@@ -8,10 +8,12 @@
     <div>
       <h1><a href="{% url 'fedexapp:ship' %}">FedEx Ship</a></h1>
     </div>
+    <p><b>From:</b></p>
     <div>
       <form action="/shipped/" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.shipper_country.label_tag }}
+        {{ form.shipper_country }}
         <input type="submit" value="Submit">
       </form>
     </div>
