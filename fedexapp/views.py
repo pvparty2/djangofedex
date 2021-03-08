@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from .forms import ShipmentForm
+from .forms import ShipmentForm, UploadFileForm
 from .banners.shipper import shipper
+from .banners.my_function import handle_uploaded_file
 
 # Create your views here.
 def ship(request):
@@ -24,4 +25,11 @@ def shipped(request):
     return render(request, 'fedexapp/shipped.html')
 
 def upload(request):
-    return render(request, 'fedexapp/upload.html')
+    if request.method == 'POST':
+        form = UploadFileForm(request.post, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(request.FILES['file'])
+            return HttpResponseRedirect('fedexapp/shipped/')
+    else:
+        form = UploadFileForm()
+    return render(request, 'fedexapp/upload.html', {'form': form})

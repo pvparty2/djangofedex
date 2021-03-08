@@ -22,3 +22,7 @@ class ShipmentForm(forms.Form):
     recipient_address1 = forms.CharField(label='* Address 1', max_length=35)
     recipient_address2 = forms.CharField(label='Address 2', max_length=35, required=False)
     recipient_phone = forms.CharField(label='* Phone no.', max_length=10)
+
+class UploadFileForm(forms.Form):
+    title = forms.CharField(max_length=50)
+    file = forms.FileField()
