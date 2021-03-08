@@ -6,4 +6,5 @@ app_name = 'fedexapp'
 urlpatterns = [
     path('', views.ship, name='ship'),
     path('shipped/', views.shipped, name='shipped'),
+    path('upload/', views.upload, name="upload"),
 ]

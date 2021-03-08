@@ -22,3 +22,6 @@ def ship(request):
 
 def shipped(request):
     return render(request, 'fedexapp/shipped.html')
+
+def upload(request):
+    return render(request, 'fedexapp/upload.html')

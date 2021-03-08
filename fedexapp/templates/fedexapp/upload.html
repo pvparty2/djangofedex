@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Upload</title>
+  </head>
+  <body>
+    <div>
+      <h1><a href="{% url 'fedexapp:ship' %}">FedEx Ship</a></h1>
+    </div>
+    <p>Upload is here.</p>
+    <div>
+      <form action="/upload/" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
