@@ -10,8 +10,10 @@
     </div>
     <p>Upload is here.</p>
     <div>
-      <form>
+      <form method="POST">
+        {% csrf_token %}
         {{ form }}
+        <input type="submit" value="SUBMIT!">
       </form>
     </div>
   </body>

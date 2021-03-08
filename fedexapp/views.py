@@ -26,7 +26,7 @@ def shipped(request):
 
 def upload(request):
     if request.method == 'POST':
-        form = UploadFileForm(request.post, request.FILES)
+        form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
             return HttpResponseRedirect('fedexapp/shipped/')
