@@ -24,4 +24,5 @@ class ShipmentForm(forms.Form):
     recipient_phone = forms.CharField(label='* Phone no.', max_length=10)
 
 class UploadFileForm(forms.Form):
+    first_name = forms.CharField(max_length=25, label="First Name")
     file = forms.FileField()
