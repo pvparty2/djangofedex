@@ -9,11 +9,11 @@
       <h1><a href="{% url 'fedexapp:ship' %}">FedEx Ship</a></h1>
     </div>
     <p>Upload is here.</p>
-    <div>
-      <form method="POST">
+    <div class="upload-file">
+      <form class="file-form" action="{% url 'fedexapp:upload' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="SUBMIT!">
+        <input type="submit" value="Submit">
       </form>
     </div>
   </body>

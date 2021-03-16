@@ -1,5 +1,4 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import ShipmentForm, UploadFileForm
 from .banners.shipper import shipper
@@ -29,7 +28,7 @@ def upload(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect('fedexapp/shipped/')
+            return redirect('fedexapp:shipped')
     else:
         form = UploadFileForm()
     return render(request, 'fedexapp/upload.html', {'form': form})
